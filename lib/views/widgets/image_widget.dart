@@ -44,7 +44,7 @@ class ImageWidget extends StatelessWidget {
               ],
             ),
             isFav
-                ? const Icon(Icons.favorite)
+                ? const Icon(Icons.favorite, color: Colors.deepPurple,)
                 : InkWell(
                     onTap: () =>
                         Provider.of<ImageViewModel>(context, listen: false)
