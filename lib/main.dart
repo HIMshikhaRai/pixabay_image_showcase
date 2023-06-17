@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image_showcase/utils/theme_helper.dart';
+import 'package:image_showcase/view_models/home_view_model.dart';
 import 'package:image_showcase/view_models/image_view_model.dart';
 import 'package:image_showcase/views/home_page.dart';
 import 'package:provider/provider.dart';
@@ -16,8 +17,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<ImageViewModel>(
-      create: (context) => ImageViewModel(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<ImageViewModel>(
+            create: (context) => ImageViewModel()),
+        ChangeNotifierProvider<HomeViewModel>(
+            create: (context) => HomeViewModel()),
+      ],
       child: MaterialApp(
         title: 'Image Showcase',
         navigatorKey: navigatorKey,

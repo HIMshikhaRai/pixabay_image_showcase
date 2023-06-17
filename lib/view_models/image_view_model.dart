@@ -66,7 +66,10 @@ class ImageViewModel extends ChangeNotifier {
 
   _showSnackBar(String msg) {
     SnackBar snackBar = SnackBar(
-      content: Text(msg),
+      backgroundColor: Colors.green,
+      content: Text(msg, style: Theme.of(navigatorKey.currentContext!).textTheme.titleMedium?.copyWith(
+        color: Colors.white
+      ),),
       duration: const Duration(seconds: 1),
     );
 

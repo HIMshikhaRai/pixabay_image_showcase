@@ -20,6 +20,7 @@ class ImageWidget extends StatelessWidget {
           child: Image.network(
             "${item?.webformatUrl}",
             height: 130,
+            width: double.infinity,
             fit: BoxFit.cover,
           ),
         ),
